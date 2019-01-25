@@ -8,6 +8,13 @@ import { Input, Table } from 'antd';
 
 // Gets an object which has the count of letters
 const getLetterCount = text => {
+  function Char_Counts(str) {
+    var uchars = {};
+    var str2 = text.replace(/\W/g, '');
+    str2.replace(/\S/g, function(l){uchars[l] = (isNaN(uchars[l]) ? 1 : uchars[l] + 1);});
+    return uchars;
+  }
+  console.log(Char_Counts(text));
   return text;
 };
 
